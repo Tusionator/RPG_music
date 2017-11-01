@@ -1,0 +1,10 @@
+1. zapytanie gdzie są foldery - wraz z wyjaśnieniem, pojawia się raz na początku, jest checkbox "nie pokazuj ponownie". info, że można zmienić potem w menu.
+
+2. Nazewnictwo folderów:
+folder główny - kontener
+1_karczma, 2_las ... 16_noname
+zmienia nazwy folderów, gdy nie ma 12_x to tworzy
+
+3. Bluetooth-skrzynka, zarządzanie
+
+4.
