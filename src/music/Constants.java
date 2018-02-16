@@ -5,5 +5,7 @@ public class Constants {
     public static final double STAGE_HEIGHT = 500.0;
     public static final int BUTTONS_COLUMNS_COUNT = 4;
 
+    //variable also in view_main.fxml in slider property
+    public static final double INITIAL_VOLUME = 0.5;
 
 }

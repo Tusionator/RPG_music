@@ -8,3 +8,23 @@ zmienia nazwy folderów, gdy nie ma 12_x to tworzy
 3. Bluetooth-skrzynka, zarządzanie
 
 4.
+
+
+Progress:
+-manage on click 16 buttons - write down list, play music
+
+
+
+
+        //TODO save resized size in preferences
+        //TODO save main directory in preferences
+        //TODO buttons on gridpane - should have max value,
+        //TODO   so when stage gets bigger list gets bigger too, not only buttons
+
+
+        //TODO show instruction - setting main directory,
+        // how folders are named etc.
+        // this should has checkbox with "don't show again"
+
+        //pick up main directory, where are folders with music
+        //create folders if there isn't any
