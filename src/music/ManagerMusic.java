@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class ManagerMusic {
+    //TODO moze sie wyjebac przy zmianie listy, sprawdz potem
     //string table with music URIs form 1 folder, currently played
     private static ArrayList<Media> sSongsMediaList;
     private static MediaPlayer sSong;
@@ -55,16 +56,6 @@ public class ManagerMusic {
             sCurrentMusicNo = 0;
             sSong = new MediaPlayer(sSongsMediaList.get(sCurrentMusicNo));
             sSong.setOnEndOfMedia(new NextSongRunnable());
-//            sSong.setOnEndOfMedia(new Runnable() {
-//                @Override
-//                public void run() {
-//                    sCurrentMusicNo ++;
-//                    sCurrentMusicNo = sCurrentMusicNo%sSongsMediaList.size();
-//
-//                    sSong = new MediaPlayer(sSongsMediaList.get(sCurrentMusicNo));
-//                    sSong.play();
-//                }
-//            });
             sSong.setVolume(sVolume);
             sSong.play();
         } else if (sSong.getStatus() == MediaPlayer.Status.PLAYING) {
@@ -94,8 +85,10 @@ public class ManagerMusic {
     }
 
     public static void stopMusic() {
-        sSong.stop();
-        Collections.shuffle(sSongsMediaList);
+        if(sSong != null) {
+            sSong.stop();
+            Collections.shuffle(sSongsMediaList);
+        }
     }
 
     public static void changeVolume(double value) {

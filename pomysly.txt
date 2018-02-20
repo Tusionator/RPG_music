@@ -16,10 +16,8 @@ Progress:
 
 
 
-        //TODO save resized size in preferences
         //TODO save main directory in preferences
-        //TODO buttons on gridpane - should have max value,
-        //TODO   so when stage gets bigger list gets bigger too, not only buttons
+        //TODO size match buttons count
 
 
         //TODO show instruction - setting main directory,
@@ -28,3 +26,9 @@ Progress:
 
         //pick up main directory, where are folders with music
         //create folders if there isn't any
+
+        //TODO nice background and other images
+
+        //TODO connect via bluetooth
+
+        //TODO nice animation while changing window size when button count is changing

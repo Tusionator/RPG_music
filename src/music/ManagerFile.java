@@ -3,34 +3,53 @@ package music;
 import java.io.File;
 import java.net.URI;
 import java.util.*;
+import java.util.prefs.Preferences;
 
 public class ManagerFile {
+    private static File mainDirectory;
 
-    private File mainDirectory;
 
-
-    public File getMainDirectory() {
+    public static File getMainDirectory() {
         if (mainDirectory == null || !mainDirectory.isDirectory()) {
-            setMainDirectory();
+            Preferences preferences = Preferences.userRoot().node(Constants.PREF_NODE_NAME);
+            String mainDir = preferences.get(Constants.PREF_DIRECTORY_KEY, "");
+            if(mainDir!= null && !mainDir.equals("")){
+                File fileMainDir = new File(mainDir);
+                if(fileMainDir.isDirectory()){
+                    mainDirectory = fileMainDir;
+                    return mainDirectory;
+                }
+            }
+            return null;
         }
         return mainDirectory;
     }
 
-    public void setMainDirectory() {
-        //public because may be set also later
-        //TODO change that this is not hardcoded
-        mainDirectory = new File("D:\\muzyka\\RPG");
+    //saves directoryPath in preferences, returns false if path not a directory
+    public static boolean setMainDirectory(String directoryPath) {
+        mainDirectory = new File(directoryPath);
+        Preferences preferences = Preferences.userRoot().node(Constants.PREF_NODE_NAME);
+        preferences.put(Constants.PREF_DIRECTORY_KEY, directoryPath);
+        if (mainDirectory.isDirectory()) {
+            return true;
+        }
+        mainDirectory = null;
+        return false;
     }
 
-    public ArrayList<File> getSortedMusicFoldersList() {
+    public static ArrayList<File> getSortedMusicFoldersList() {
         File mainDirectory = getMainDirectory();
+        if (mainDirectory == null || !mainDirectory.isDirectory()) {
+            return null;
+        }
         File[] fileList = mainDirectory.listFiles();
+        if (fileList == null || fileList.length < 1) {
+            return null;
+        }
         ArrayList<File> foldersArray = new ArrayList<>();
-        if (fileList != null) {
-            for (File file : fileList) {
-                if (file.isDirectory() && checkNameConvention(file.getName())) {
-                    foldersArray.add(file);
-                }
+        for (File file : fileList) {
+            if (file.isDirectory() && checkNameConvention(file.getName())) {
+                foldersArray.add(file);
             }
         }
         foldersArray.sort(Comparator.comparingInt(ManagerFile::getMusicFolderNumber));
@@ -67,10 +86,11 @@ public class ManagerFile {
         }
         return null;
     }
+
     //function closely connected with #getMusicFolderName - if convention changes check both functions
     //Convention of folder name: "number_name"
     private static boolean checkNameConvention(String fileName) {
-        if(fileName!=null && fileName.contains("_")) {
+        if (fileName != null && fileName.contains("_")) {
             String[] splitFileName = fileName.split("_");
             if (splitFileName[0] != null && !splitFileName[0].isEmpty()) {
                 String prefix = splitFileName[0];
@@ -85,16 +105,5 @@ public class ManagerFile {
         return false;
     }
 
-    public List<URI> getMusicUrisFromFolder(String folderName) {
 
-        return null;
-    }
-
-    public void setCurrentMusicFolder() {
-
-    }
-
-    public void changeMusicFolderName() {
-
-    }
 }
