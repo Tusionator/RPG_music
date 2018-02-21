@@ -51,7 +51,7 @@
         </GridPane>
         <Pane fx:id="imageUp" minHeight="60.0">
         </Pane>
-        <TextArea fx:id="txtaMusicList" editable="false" maxHeight="1.7976931348623157E308" minHeight="140.0"
+        <TextArea fx:id="txtaMusicList" editable="false" maxHeight="1.7976931348623157E308" minHeight="0.0"
                   prefHeight="300.0" wrapText="true" VBox.vgrow="ALWAYS">
         </TextArea>
         <Pane fx:id="imageDown" minHeight="60.0">

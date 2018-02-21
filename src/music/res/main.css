@@ -27,9 +27,9 @@
 #txtaMusicList .content {
     -fx-background-color: transparent;
 	-fx-background-image: url("pergamin_middle.png");
-	-fx-background-repeat: repeat-y;
 	-fx-background-position: top, center;
-	-fx-background-size: contain;
+	-fx-background-size: 100% auto;
+	-fx-background-repeat: repeat-y;
     -fx-padding: 0 60 0 60;
 }
 #imageUp {
