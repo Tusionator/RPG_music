@@ -48,3 +48,39 @@
 #parentBox {
 	-fx-background-color: cyan;
 }
+
+.button {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_middle.png");
+	-fx-background-size: stretch;
+    -fx-text-fill: black;
+}
+#btnPlay{
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_down.png");
+	-fx-background-size: stretch;
+    -fx-text-fill: black;
+}
+#btnStop {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_up.png");
+	-fx-background-size: stretch;
+    -fx-text-fill: black;
+}
+.thumb {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_middle.png");
+	-fx-background-size: stretch;
+}
+.track {
+     -fx-background-color: transparent;
+ 	-fx-background-image: url("pergamin_middle.png");
+ 	-fx-background-size: stretch;
+}
+
+.menu-bar, .menu-item, .context-menu {
+ 	-fx-background-image: url("pergamin_middle.png");
+}
+.label {
+     -fx-text-fill: black;
+}

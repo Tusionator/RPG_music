@@ -1,5 +1,6 @@
 package music;
 
+import com.sun.javafx.css.Style;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -92,11 +93,13 @@ public class ControllerMain {
 
     //adds button(music folders) to gridpane, resizes minimum size of stage
     private void setGridForButtonsView() {
+        gridForButtons.getChildren().clear();
+        gridForButtons.getColumnConstraints().clear();
+        gridForButtons.getRowConstraints().clear();
         ArrayList<File> foldersNamesList = ManagerFile.getSortedMusicFoldersList();
         if (foldersNamesList == null || foldersNamesList.isEmpty()) {
             return;
         }
-        gridForButtons.getChildren().clear();
         int colNo = Constants.BUTTONS_COLUMNS_COUNT;
         int rowsNo = ((foldersNamesList.size() - 1) / colNo) + 1;
         //TODO button size hardcoded - change when button image loaded
@@ -143,7 +146,7 @@ public class ControllerMain {
 
     private void setMusicSongsList(ArrayList<String> musicList) {
         if (musicList == null || musicList.size() < 1) {
-            txtaMusicList.setText("\n" + MyStrings.NO_MUSIC_MESSAGE);
+            txtaMusicList.setText(MyStrings.NO_MUSIC_MESSAGE);
             return;
         }
         String strMusicList = "";
