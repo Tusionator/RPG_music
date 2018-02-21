@@ -146,7 +146,7 @@ public class ControllerMain {
             txtaMusicList.setText("\n" + MyStrings.NO_MUSIC_MESSAGE);
             return;
         }
-        String strMusicList = "\n";
+        String strMusicList = "";
         for (String hit : musicList) {
             strMusicList = strMusicList.concat(hit + "\n");
         }

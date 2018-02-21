@@ -27,3 +27,5 @@ zmienia nazwy folderów, gdy nie ma 12_x to tworzy?
         //TODO nice animation while changing window size when button count is changing
 
         //TODO icon
+
+        //TODO are You sure about this font?

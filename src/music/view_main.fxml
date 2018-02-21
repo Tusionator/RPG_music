@@ -3,15 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-<VBox fx:id="parentBox" alignment="CENTER" prefHeight="425.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8"
+<?import java.net.URL?>
+<VBox fx:id="parentBox" alignment="CENTER" prefHeight="479.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1" fx:controller="music.ControllerMain">
     <children>
         <MenuBar>
             <menus>
                 <Menu mnemonicParsing="false" text="Settings">
                     <items>
-                        <MenuItem onAction="#handleSettings" mnemonicParsing="false" text="Music Directory"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Music Directory"/>
                     </items>
                 </Menu>
             </menus>
@@ -41,16 +44,23 @@
         </Pane>
         <GridPane fx:id="gridForButtons" alignment="CENTER" gridLinesVisible="true" hgap="5.0"
                   maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-                  style="-fx-background-color: blue;" vgap="5.0" VBox.vgrow="ALWAYS">
+                  vgap="5.0" VBox.vgrow="ALWAYS">
             <padding>
                 <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
             </padding>
         </GridPane>
-        <TextArea fx:id="txtaMusicList" editable="false" maxHeight="1.7976931348623157E308" minHeight="50.0"
+        <Pane fx:id="imageUp" minHeight="60.0">
+        </Pane>
+        <TextArea fx:id="txtaMusicList" editable="false" maxHeight="1.7976931348623157E308" minHeight="140.0"
                   prefHeight="300.0" wrapText="true" VBox.vgrow="ALWAYS">
         </TextArea>
+        <Pane fx:id="imageDown" minHeight="60.0">
+        </Pane>
     </children>
     <cursor>
         <Cursor fx:constant="DEFAULT"/>
     </cursor>
+    <stylesheets>
+        <URL value="@res/main.css" />
+    </stylesheets>
 </VBox>

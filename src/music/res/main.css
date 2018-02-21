@@ -1,0 +1,50 @@
+
+.text{
+    -fx-font-family: 'Jena Gotisch';
+    -fx-font-size: 30;
+}
+@font-face {
+    src: url('JenaGotisch.ttf');
+}
+#txtaMusicList {
+    -fx-font-family: 'Jena Gotisch';
+    -fx-font-size: 30;
+    -fx-padding: -1 0 -1 0;
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
+}
+#txtaMusicList .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+#txtaMusicList .scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+#txtaMusicList .text {
+    -fx-text-alignment: left;
+}
+
+#txtaMusicList .content {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_middle.png");
+	-fx-background-repeat: repeat-y;
+	-fx-background-position: top, center;
+	-fx-background-size: contain;
+    -fx-padding: 0 60 0 60;
+}
+#imageUp {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_up.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: top, center;
+	-fx-background-size: stretch;
+}
+#imageDown {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_down.png");
+	-fx-background-position: top, center;
+	-fx-background-size: stretch;
+}
+#parentBox {
+	-fx-background-color: cyan;
+}
