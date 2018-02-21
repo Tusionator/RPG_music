@@ -3,32 +3,27 @@
 2. Nazewnictwo folderów:
 folder główny - kontener
 1_karczma, 2_las ... 16_noname
-zmienia nazwy folderów, gdy nie ma 12_x to tworzy
+zmienia nazwy folderów, gdy nie ma 12_x to tworzy?
 
 3. Bluetooth-skrzynka, zarządzanie
 
 4.
 
 
-Progress:
--manage on click 16 buttons - write down list, play music
 
 
 
 
-        //TODO save main directory in preferences
         //TODO size match buttons count
-
 
         //TODO show instruction - setting main directory,
         // how folders are named etc.
         // this should has checkbox with "don't show again"
-
-        //pick up main directory, where are folders with music
-        //create folders if there isn't any
 
         //TODO nice background and other images
 
         //TODO connect via bluetooth
 
         //TODO nice animation while changing window size when button count is changing
+
+        //TODO icon
