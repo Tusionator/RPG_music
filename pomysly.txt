@@ -14,13 +14,11 @@ zmienia nazwy folderów, gdy nie ma 12_x to tworzy?
 
 
 
-        //TODO size match buttons count
 
         //TODO show instruction - setting main directory,
         // how folders are named etc.
         // this should has checkbox with "don't show again"
 
-        //TODO nice background and other images
 
         //TODO connect via bluetooth
 

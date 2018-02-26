@@ -1,15 +1,16 @@
 package music;
 
-import com.sun.javafx.css.Style;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
 import javafx.stage.Modality;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Observer;
 
 public class ControllerMain {
     @FXML
@@ -26,6 +28,17 @@ public class ControllerMain {
     private TextArea txtaMusicList;
     @FXML
     private VBox parentBox;
+    @FXML
+    private Button btnPlay;
+    @FXML
+    private Button btnStop;
+
+    private Background backgroundPlay;
+    private Background backgroundPause;
+    private Background backgroundStop;
+    private Background backgroundDisablePlay;
+    private Background backgroundDisableStop;
+
 
     @FXML
     public void initialize() {
@@ -41,8 +54,66 @@ public class ControllerMain {
                 alert.showAndWait();
             }
         }
+
+
+        BackgroundImage backgroundImagePlay = new BackgroundImage(new Image(
+                getClass().getResource("res//play.png").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        backgroundPlay = new Background(backgroundImagePlay);
+        BackgroundImage backgroundImagePause = new BackgroundImage(new Image(
+                getClass().getResource("res//pause.png").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        backgroundPause = new Background(backgroundImagePause);
+        BackgroundImage backgroundImageStop = new BackgroundImage(new Image(
+                getClass().getResource("res//stop.png").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        backgroundStop = new Background(backgroundImageStop);
+        BackgroundImage backgroundImageDisablePlay = new BackgroundImage(new Image(
+                getClass().getResource("res//play_dis.png").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        backgroundDisablePlay = new Background(backgroundImageDisablePlay);
+        BackgroundImage backgroundImageDisableStop = new BackgroundImage(new Image(
+                getClass().getResource("res//stop_dis.png").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        backgroundDisableStop = new Background(backgroundImageDisableStop);
+        btnPlay.setBackground(backgroundDisablePlay);
+        btnStop.setBackground(backgroundDisableStop);
+
         setGridForButtonsView();
+
+        ManagerMusic.sMusicStatus.addObserver(new Observer() {
+            @Override
+            public void update(java.util.Observable o, Object arg) {
+                Integer i = (Integer) arg;
+
+                if (i == MusicStatusObservable.PLAYING) {
+                    btnPlay.setBackground(backgroundPause);
+                    btnStop.setBackground(backgroundStop);
+
+                    System.out.println("PLAYING");
+                } else if (i == MusicStatusObservable.PAUSED) {
+                    btnPlay.setBackground(backgroundPlay);
+                    btnStop.setBackground(backgroundStop);
+                    System.out.println("PAUSED");
+                } else if (i == MusicStatusObservable.STOPPED) {
+                    btnPlay.setBackground(backgroundPlay);
+                    btnStop.setBackground(backgroundDisableStop);
+                    System.out.println("STOPPED");
+                } else if (i == MusicStatusObservable.NOTHING_TO_PLAY) {
+                    btnPlay.setBackground(backgroundDisablePlay);
+                    btnStop.setBackground(backgroundDisableStop);
+                    System.out.println("NOTHING_TO_PLAY");
+                }
+            }
+        });
+
     }
+
 
     @FXML
     public void handleButtonPlay() {
@@ -102,9 +173,8 @@ public class ControllerMain {
         }
         int colNo = Constants.BUTTONS_COLUMNS_COUNT;
         int rowsNo = ((foldersNamesList.size() - 1) / colNo) + 1;
-        //TODO button size hardcoded - change when button image loaded
-        double buttonMaxH = 100.0;
-        double buttonMaxW = 150.0;
+        double buttonMaxH = 60.0;
+        double buttonMaxW = 170.0;
 
         for (int i = 0; i < colNo; i++) {
             ColumnConstraints column = new ColumnConstraints();
@@ -139,6 +209,8 @@ public class ControllerMain {
             gridForButtons.add(button, i % Constants.BUTTONS_COLUMNS_COUNT,
                     i / Constants.BUTTONS_COLUMNS_COUNT);
             GridPane.setHalignment(button, HPos.CENTER);
+            gridForButtons.setMinHeight(rowsNo * buttonMaxH);
+            gridForButtons.setMaxHeight(rowsNo * buttonMaxH);
         }
         parentBox.setMinHeight(parentBox.getHeight() + gridForButtons.getHeight());
         parentBox.setMinWidth(parentBox.getWidth());
@@ -156,4 +228,5 @@ public class ControllerMain {
         System.out.println("list: " + strMusicList);
         txtaMusicList.setText(strMusicList);
     }
+
 }
