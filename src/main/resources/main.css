@@ -1,0 +1,80 @@
+
+.text{
+    -fx-font-family: 'nightwarrior';
+    -fx-font-size: 25;
+}
+@font-face {
+    src: url('Nightwarrior.ttf');
+}
+#txtaMusicList {
+    -fx-font-family: 'nightwarrior';
+    -fx-font-size: 30;
+    -fx-padding: -1 0 -1 0;
+    -fx-text-fill: black;
+    -fx-font-size: 20;
+    -fx-background-color: transparent;
+}
+#txtaMusicList .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+#txtaMusicList .scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+#txtaMusicList .text {
+    -fx-text-alignment: left;
+}
+
+#txtaMusicList .content {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_middle.png");
+	-fx-background-position: top, center;
+	-fx-background-size: 100% auto;
+	-fx-background-repeat: repeat-y;
+    -fx-padding: 0 60 0 60;
+}
+#imageUp {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_up.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: top, center;
+	-fx-background-size: stretch;
+}
+#imageDown {
+    -fx-background-color: transparent;
+	-fx-background-image: url("pergamin_down.png");
+	-fx-background-position: top, center;
+	-fx-background-size: stretch;
+}
+#parentBox {
+	-fx-background-image: url("back.png");
+	-fx-background-repeat: repeat;
+	-fx-background-size: auto;
+}
+
+#gridForButtons >> .button {
+    -fx-background-color: transparent;
+	-fx-background-image: url("button.png");
+	-fx-background-size: stretch;
+    -fx-text-fill: burlywood;
+}
+.thumb {
+    -fx-background-color: transparent;
+	-fx-background-image: url("thumb.png");
+	-fx-background-size: stretch;
+}
+.track {
+     -fx-background-color: transparent;
+ 	-fx-background-image: url("slider.png");
+ 	-fx-background-size: stretch;
+}
+.menu-bar, .menu-item, .context-menu {
+ 	-fx-background-image: url("back2.png");
+    -fx-font-size: 5;
+}
+.menu .text {
+     -fx-font-size: 16;
+ }
+.label {
+    -fx-text-fill: antiquewhite;
+}

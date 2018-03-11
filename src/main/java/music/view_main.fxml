@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox fx:id="parentBox" alignment="CENTER" prefHeight="479.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="music.ControllerMain">
+    <children>
+        <MenuBar fx:id="menubar">
+            <menus>
+                <Menu fx:id="menu" mnemonicParsing="false" text="Settings">
+                    <items>
+                        <MenuItem fx:id="musicdir" mnemonicParsing="false" onAction="#handleSettings" text="Music Directory" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Pane minHeight="114.0" minWidth="300.0" prefHeight="114.0" prefWidth="300.0" VBox.vgrow="NEVER">
+            <VBox.margin>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </VBox.margin>
+            <children>
+                <Button fx:id="btnPlay" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonPlay" prefHeight="80.0" prefWidth="80.0" />
+                <Button fx:id="btnStop" layoutX="102.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonStop" prefHeight="80.0" prefWidth="80.0" />
+                <Slider fx:id="srVolume" blockIncrement="0.01" layoutX="199.0" layoutY="48.0" majorTickUnit="0.1" max="1.0" min="0.0" nodeOrientation="LEFT_TO_RIGHT" onKeyPressed="#handleVolumeScroll" onKeyReleased="#handleVolumeScroll" onMouseClicked="#handleVolumeScroll" onMouseDragged="#handleVolumeScroll" prefHeight="17.0" prefWidth="200.0" snapToTicks="true" value="0.5">
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                </Slider>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </Pane>
+        <GridPane fx:id="gridForButtons" alignment="CENTER" gridLinesVisible="true" hgap="5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="5.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+        </GridPane>
+        <Pane fx:id="imageUp" minHeight="60.0">
+        </Pane>
+        <TextArea fx:id="txtaMusicList" editable="false" maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="300.0" wrapText="true" VBox.vgrow="ALWAYS">
+        </TextArea>
+        <Pane fx:id="imageDown" minHeight="60.0">
+        </Pane>
+    </children>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+    <stylesheets>
+        <URL value="@res/main.css" />
+    </stylesheets>
+</VBox>
