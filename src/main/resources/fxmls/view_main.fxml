@@ -54,6 +54,6 @@
         <Cursor fx:constant="DEFAULT" />
     </cursor>
     <stylesheets>
-        <URL value="@res/main.css" />
+        <URL value="@../csss/main.css" />
     </stylesheets>
 </VBox>

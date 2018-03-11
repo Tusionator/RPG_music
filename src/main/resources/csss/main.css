@@ -27,7 +27,7 @@
 
 #txtaMusicList .content {
     -fx-background-color: transparent;
-	-fx-background-image: url("pergamin_middle.png");
+	-fx-background-image: url("../images/pergamin_middle.png");
 	-fx-background-position: top, center;
 	-fx-background-size: 100% auto;
 	-fx-background-repeat: repeat-y;
@@ -35,41 +35,41 @@
 }
 #imageUp {
     -fx-background-color: transparent;
-	-fx-background-image: url("pergamin_up.png");
+	-fx-background-image: url("../images/pergamin_up.png");
 	-fx-background-repeat: no-repeat;
 	-fx-background-position: top, center;
 	-fx-background-size: stretch;
 }
 #imageDown {
     -fx-background-color: transparent;
-	-fx-background-image: url("pergamin_down.png");
+	-fx-background-image: url("../images/pergamin_down.png");
 	-fx-background-position: top, center;
 	-fx-background-size: stretch;
 }
 #parentBox {
-	-fx-background-image: url("back.png");
+	-fx-background-image: url("../images/back.png");
 	-fx-background-repeat: repeat;
 	-fx-background-size: auto;
 }
 
 #gridForButtons >> .button {
     -fx-background-color: transparent;
-	-fx-background-image: url("button.png");
+	-fx-background-image: url("../images/button.png");
 	-fx-background-size: stretch;
     -fx-text-fill: burlywood;
 }
 .thumb {
     -fx-background-color: transparent;
-	-fx-background-image: url("thumb.png");
+	-fx-background-image: url("../images/thumb.png");
 	-fx-background-size: stretch;
 }
 .track {
      -fx-background-color: transparent;
- 	-fx-background-image: url("slider.png");
+ 	-fx-background-image: url("../images/slider.png");
  	-fx-background-size: stretch;
 }
 .menu-bar, .menu-item, .context-menu {
- 	-fx-background-image: url("back2.png");
+ 	-fx-background-image: url("../images/back2.png");
     -fx-font-size: 5;
 }
 .menu .text {

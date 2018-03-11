@@ -13,5 +13,8 @@ public class Constants {
     public static final String PREF_NODE_NAME = "/rpg/music";
     public static final String PREF_DIRECTORY_KEY = "directory";
 
+    //bluetooth
+    public static final String BLT_DEVICE_NAME = "HC-05";
+
 
 }

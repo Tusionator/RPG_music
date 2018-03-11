@@ -4,7 +4,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -57,27 +56,27 @@ public class ControllerMain {
 
 
         BackgroundImage backgroundImagePlay = new BackgroundImage(new Image(
-                getClass().getResource("res//play.png").toExternalForm()),
+                getClass().getClassLoader().getResource("images/play.png").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         backgroundPlay = new Background(backgroundImagePlay);
         BackgroundImage backgroundImagePause = new BackgroundImage(new Image(
-                getClass().getResource("res//pause.png").toExternalForm()),
+                getClass().getClassLoader().getResource("images/pause.png").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         backgroundPause = new Background(backgroundImagePause);
         BackgroundImage backgroundImageStop = new BackgroundImage(new Image(
-                getClass().getResource("res//stop.png").toExternalForm()),
+                getClass().getClassLoader().getResource("images/stop.png").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         backgroundStop = new Background(backgroundImageStop);
         BackgroundImage backgroundImageDisablePlay = new BackgroundImage(new Image(
-                getClass().getResource("res//play_dis.png").toExternalForm()),
+                getClass().getClassLoader().getResource("images/play_dis.png").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         backgroundDisablePlay = new Background(backgroundImageDisablePlay);
         BackgroundImage backgroundImageDisableStop = new BackgroundImage(new Image(
-                getClass().getResource("res//stop_dis.png").toExternalForm()),
+                getClass().getClassLoader().getResource("images/stop_dis.png").toExternalForm()),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         backgroundDisableStop = new Background(backgroundImageDisableStop);
@@ -151,7 +150,7 @@ public class ControllerMain {
             Stage window = new Stage();
             window.initModality(Modality.APPLICATION_MODAL);
             window.setTitle("Settings");
-            VBox vBox = FXMLLoader.load(getClass().getResource("view_settings.fxml"));
+            VBox vBox = FXMLLoader.load(getClass().getResource("../../resources/fxmls/view_settings.fxml"));
             Scene scene = new Scene(vBox);
             window.setScene(scene);
             window.showAndWait();

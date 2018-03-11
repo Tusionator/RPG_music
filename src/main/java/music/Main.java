@@ -11,9 +11,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Font.loadFont(getClass().getResource("res//nightwarrior.ttf").toExternalForm(), 10);
 
-        VBox root = FXMLLoader.load(getClass().getResource("view_main.fxml"));
+
+//        ManagerBluetoothConnection managerBluetoothConnection = new ManagerBluetoothConnection();
+//        managerBluetoothConnection.tryToConnect();
+
+
+        Font.loadFont(getClass().getClassLoader().getResource("Nightwarrior.ttf").toExternalForm(), 10);
+
+
+        VBox root = FXMLLoader.load(getClass().getClassLoader().getResource("fxmls/view_main.fxml"));
         primaryStage.setTitle(MyStrings.APP_NAME);
         primaryStage.setScene(new Scene(root));
         primaryStage.setMinHeight(Constants.STAGE_HEIGHT);
